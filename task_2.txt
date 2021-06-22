@@ -1,0 +1,39 @@
+mysql> CREATE DATABASE example
+    -> ;
+Query OK, 1 row affected (0.08 sec)
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| example            |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| world              |
++--------------------+
+7 rows in set (0.06 sec)
+
+mysql> USE example
+Database changed
+mysql> SHOW TABLES;
+Empty set (0.05 sec)
+
+mysql> CREATE TABLE users (INT id, VARCHAR name)
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'INT id, VARCHAR name)' at line 1
+mysql> CREATE TABLE users (
+    -> id INT,
+    -> name VARCHAR (256)
+    -> );
+Query OK, 0 rows affected (0.28 sec)
+
+mysql> SHOW TABLES;
++-------------------+
+| Tables_in_example |
++-------------------+
+| users             |
++-------------------+
+1 row in set (0.00 sec)
